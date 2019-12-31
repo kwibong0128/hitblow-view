@@ -37,7 +37,7 @@ class Matching extends React.Component {
       if(this.state.code.length<=20){
         axios({
           method : "POST",
-          url : process.env.REACT_APP_SERVER_URL+"/numbers/create",
+          url : "https://kwibong-hitblow-api.herokuapp.com/numbers/create",
           data : { my_number: "", opponent_number: "", code: this.state.code, call: 1 }
         })
         .then((response)=> {
@@ -64,7 +64,7 @@ class Matching extends React.Component {
     if(this.state.created_id!==null){
       axios({
         method: 'get',
-        url: process.env.REACT_APP_SERVER_URL+'/numbers/get/'+this.state.created_id+'/'+this.state.code
+        url: 'https://kwibong-hitblow-api.herokuapp.com/numbers/get/'+this.state.created_id+'/'+this.state.code
       })
       .then((response)=> {
         console.log(response.data);
