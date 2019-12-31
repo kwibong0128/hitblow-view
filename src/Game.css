@@ -1,0 +1,4 @@
+.flex-box_game{
+  display: flex;
+  justify-content: space-around;
+}
