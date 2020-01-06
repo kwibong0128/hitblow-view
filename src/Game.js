@@ -116,7 +116,7 @@ class Game extends React.Component{
     });
     const my_modify={ call: 1 }
     axios
-        .put('https://kwibong-hitblow-api.herokuapp.com/numbers/update/' + this.state.my_id, my_modify)
+        .put(process.env.REACT_APP_SERVER_URL+'/numbers/update/' + this.state.my_id, my_modify)
         .then(res => {
             this.updateOpponentCall();
         })
@@ -129,7 +129,7 @@ class Game extends React.Component{
     /* 相手のcallを0に変える*/
     const opponent_modify={ call: 0 }
     axios
-        .put('https://kwibong-hitblow-api.herokuapp.com/numbers/update/' + this.state.opponent_id, opponent_modify)
+        .put(process.env.REACT_APP_SERVER_URL+'/numbers/update/' + this.state.opponent_id, opponent_modify)
         .then(res => {
             this.getOpponentEatBite();
         })
@@ -142,7 +142,7 @@ class Game extends React.Component{
     /* 相手のeat,biteの取得、stateへの保存、call_countが1、つまりまだ一度もコールしていないときはやらん */
     axios({
       method: 'get',
-      url: 'https://kwibong-hitblow-api.herokuapp.com/results/show/'+this.state.opponent_id
+      url: process.env.REACT_APP_SERVER_URL+'/results/show/'+this.state.opponent_id
     })
     .then((response)=> {
       if(response.data.length!==0){
@@ -174,7 +174,7 @@ class Game extends React.Component{
       bite: String(this.state.bite_count)
     };
     axios
-        .post('https://kwibong-hitblow-api.herokuapp.com/results/create', result_data)
+        .post(process.env.REACT_APP_SERVER_URL+'/results/create', result_data)
         .then(res => {
           this.checkResult();
         })
@@ -229,7 +229,7 @@ class Game extends React.Component{
       /* 相手のcallを取得*/
       axios({
         method: 'get',
-        url: 'https://kwibong-hitblow-api.herokuapp.com/numbers/show/'+this.state.opponent_id
+        url: process.env.REACT_APP_SERVER_URL+'/numbers/show/'+this.state.opponent_id
       })
       .then((response)=> {
         /* 相手のcallが1 => call済み => 自分はcallできる*/

@@ -75,7 +75,7 @@ class SelectNumber extends React.Component{
     if(this.state.is_click_gamestartbutton===0){
       const modify={ my_number: this.state.my_number }
       axios
-          .put('https://kwibong-hitblow-api.herokuapp.com/numbers/update/' + this.state.my_id, modify)
+          .put(process.env.REACT_APP_SERVER_URL+'/numbers/update/' + this.state.my_id, modify)
           .then(res => {
               this.getOpponentData();
           })
@@ -90,7 +90,7 @@ class SelectNumber extends React.Component{
   getOpponentData(){
     axios({
       method: 'get',
-      url: 'https://kwibong-hitblow-api.herokuapp.com/numbers/show/'+this.state.opponent_id
+      url: process.env.REACT_APP_SERVER_URL+'/numbers/show/'+this.state.opponent_id
     })
     .then((response)=> {
       this.setState(prevState => {
@@ -111,7 +111,7 @@ class SelectNumber extends React.Component{
     if(this.state.opponent_call===1){
       const modify={ call: 0 }
       axios
-          .put('https://kwibong-hitblow-api.herokuapp.com/numbers/update/' + this.state.my_id, modify)
+          .put(process.env.REACT_APP_SERVER_URL+'/numbers/update/' + this.state.my_id, modify)
           .then(response => {
               this.setState(prevState => {
                 return {
