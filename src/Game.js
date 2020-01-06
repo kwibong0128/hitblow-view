@@ -7,7 +7,7 @@ class ShowEatBite extends React.Component{
   render(){
     return(
       <div>
-      CALL{this.props.from_game_data[0]}: {this.props.from_game_data[1]}　{this.props.from_game_data[2]}EAT　{this.props.from_game_data[3]}BITE
+      CALL{this.props.from_game_data[0]}　{this.props.from_game_data[1]}　{this.props.from_game_data[2]}EAT　{this.props.from_game_data[3]}BITE
       </div>
     );
   }
@@ -201,23 +201,14 @@ class Game extends React.Component{
       }
     } else {
       if(this.state.eat_count===3){
-        if(opre.slice(-1)[0][2]==='3'){
-          /* 自分が先に勝った場合、myco>opco*/
-          if(this.state.call_count>parseInt(opre.slice(-1)[0][0])){
-            this.setState(prevState => {
-              return {
-                result: 1,
-                result_message: "あなたの勝ちです!"
-              };
-            });
-          }
+        if(opre.slice(-1)[0][2]!=='3'){
+          this.setState(prevState => {
+            return {
+              result: 1,
+              result_message: "あなたの勝ちです!"
+            };
+          });
         }
-        this.setState(prevState => {
-          return {
-            result: 1,
-            result_message: "あなたの勝ちです!"
-          };
-        });
       }
     }
   }

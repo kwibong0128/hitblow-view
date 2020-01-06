@@ -173,16 +173,18 @@ class SelectNumber extends React.Component{
       return(
         <div>
           <p>対戦相手が見つかりました<br/>数字3桁を選んでください</p>
-          <Button id="1" value="1" variant="outlined" color="primary" disabled={false} onClick={this.handleUpdateMyNumberState} >1</Button>　
-          <Button id="2" value="2" variant="outlined" color="primary" disabled={false} onClick={this.handleUpdateMyNumberState} >2</Button>　
-          <Button id="3" value="3" variant="outlined" color="primary" disabled={false} onClick={this.handleUpdateMyNumberState} >3</Button>　
-          <Button id="4" value="4" variant="outlined" color="primary" disabled={false} onClick={this.handleUpdateMyNumberState} >4</Button>　
-          <Button id="5" value="5" variant="outlined" color="primary" disabled={false} onClick={this.handleUpdateMyNumberState} >5</Button><br/><br/>
-          <Button id="6" value="6" variant="outlined" color="primary" disabled={false} onClick={this.handleUpdateMyNumberState} >6</Button>　
-          <Button id="7" value="7" variant="outlined" color="primary" disabled={false} onClick={this.handleUpdateMyNumberState} >7</Button>　
-          <Button id="8" value="8" variant="outlined" color="primary" disabled={false} onClick={this.handleUpdateMyNumberState} >8</Button>　
-          <Button id="9" value="9" variant="outlined" color="primary" disabled={false} onClick={this.handleUpdateMyNumberState} >9</Button>　
-          <Button id="0" value="0" variant="outlined" color="primary" disabled={false} onClick={this.handleUpdateMyNumberState} >0</Button><br/><br/>
+          <div className="number_button">
+            <Button id="1" value="1" variant="outlined" color="primary" disabled={false} onClick={this.handleUpdateMyNumberState} >1</Button>　
+            <Button id="2" value="2" variant="outlined" color="primary" disabled={false} onClick={this.handleUpdateMyNumberState} >2</Button>　
+            <Button id="3" value="3" variant="outlined" color="primary" disabled={false} onClick={this.handleUpdateMyNumberState} >3</Button>　
+            <Button id="4" value="4" variant="outlined" color="primary" disabled={false} onClick={this.handleUpdateMyNumberState} >4</Button>　
+            <Button id="5" value="5" variant="outlined" color="primary" disabled={false} onClick={this.handleUpdateMyNumberState} >5</Button><br/><br/>
+            <Button id="6" value="6" variant="outlined" color="primary" disabled={false} onClick={this.handleUpdateMyNumberState} >6</Button>　
+            <Button id="7" value="7" variant="outlined" color="primary" disabled={false} onClick={this.handleUpdateMyNumberState} >7</Button>　
+            <Button id="8" value="8" variant="outlined" color="primary" disabled={false} onClick={this.handleUpdateMyNumberState} >8</Button>　
+            <Button id="9" value="9" variant="outlined" color="primary" disabled={false} onClick={this.handleUpdateMyNumberState} >9</Button>　
+            <Button id="0" value="0" variant="outlined" color="primary" disabled={false} onClick={this.handleUpdateMyNumberState} >0</Button><br/><br/>
+          </div>
           <div className="flex-box_select_number">
             <div>
               <Button variant="outlined" color="secondary" onClick={this.handleDeleteMyNumberState} >クリア</Button>　

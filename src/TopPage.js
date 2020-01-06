@@ -37,7 +37,7 @@ class TopPage extends React.Component{
   render() {
     return (
       <div className="toppage">
-        <p>Hit&Blow for SHION</p>
+        <p>Hit&Blow</p>
         <MatchingButton onClick={this.onClick} is_top_page_hide={this.state.is_top_page_hide}/>
         {this.state.is_top_page_hide ? <Matching /> : null}<br/>
         {this.state.is_top_page_hide ? null :
